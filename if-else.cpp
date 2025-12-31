@@ -1,6 +1,5 @@
 #include<iostream>
 using namespace std;
-
 class Solution {
 public:
     void studentGrade(int marks) {
@@ -29,3 +28,5 @@ int main() {
 
     return 0;
 }
+
+//It is not mandatory to have an else statement. 
