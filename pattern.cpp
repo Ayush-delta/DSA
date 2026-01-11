@@ -28,7 +28,6 @@ void printPattern3(int n) {
     }
 }
 
-
 void printPattern4(int n) {
     for (int i=1; i<=n ; i++) {
         for (int j=1 ; j<=i ; j++){
@@ -174,6 +173,42 @@ void pattern16(int n) {
     }
 }
 
+void pattern17(int n) {
+    for (int i = 0; i<n ;i++){
+        //space 
+        for(int j = 0; j<=n-i-1; j++){
+            cout << " "; 
+        }
+
+        //alphabet
+        char ch = 'A';
+        int breakpoint = (2*i+1) / 2;
+        for (int j = 1; j<=2*i + 1; j++){
+            cout << ch;
+            if (j <= breakpoint) ch++ ;
+            else ch--;
+        }
+        //space 
+        for(int j = 0; j<=n-i-1; j++){
+            cout << " ";
+        }
+        cout << endl;
+    }
+}
+
+void pattern18(int n) {
+    for (int i=0; i<n ; i++) {
+        for (char ch = 'E' - i; ch<= 'E'; ch++){
+            cout << ch << " ";
+        }
+        cout << endl;
+    }
+}
+
+
+void pattern19(int n) {
+
+}
 int main() {
     int t;
     cin >> t;
@@ -181,7 +216,7 @@ int main() {
         int n;
         cin >> n;
         // pattern7(n);
-        pattern16(n);
+        pattern18(n);
     }
     return 0;
 }
