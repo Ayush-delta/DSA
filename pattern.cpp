@@ -300,7 +300,7 @@ int main() {
         int n;
         cin >> n;
         // pattern7(n);
-        pattern22(n);
+        pattern19(n);
     }
     return 0;
 }
