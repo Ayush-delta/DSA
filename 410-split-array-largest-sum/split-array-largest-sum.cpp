@@ -1,19 +1,19 @@
 class Solution {
 public:
-    int countSubarrays(vector<int>& nums, int maxSum) {
-        int subArray = 1;
+    int countSubarray(vector<int>& nums, int maxSum) {
+        int subArrays = 1;
         int currSum = 0;
 
-        for(int i = 0; i<nums.size(); i++){
+        for(int i = 0; i< nums.size(); i++) {
             if(currSum + nums[i] <= maxSum) {
                 currSum += nums[i];
             }
             else {
-                subArray++;
+                subArrays++;
                 currSum = nums[i];
             }
         }
-        return subArray;
+        return subArrays;
     }
     int splitArray(vector<int>& nums, int k) {
         long long low = *max_element(nums.begin(), nums.end());
@@ -21,10 +21,9 @@ public:
 
         while(low <= high) {
             int mid = (low + high) / 2;
+            int subArrays = countSubarray(nums, mid);
 
-            int subArray = countSubarrays(nums, mid);
-
-            if(subArray > k) {
+            if(subArrays > k) {
                 low = mid + 1;
             }
             else high = mid - 1;
