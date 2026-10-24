@@ -5,7 +5,7 @@ public:
         int m = mat[0].size();
 
         int cnt_max = -1;
-        int ind = 0;
+        int ind = -1;
 
         for(int i = 0; i < n; i++) {
             int cnt_ones = 0;
