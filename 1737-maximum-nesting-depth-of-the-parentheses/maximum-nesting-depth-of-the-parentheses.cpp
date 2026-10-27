@@ -1,17 +1,17 @@
 class Solution {
 public:
     int maxDepth(string s) {
-        int currCount = 0;
-        int maxCount = 0;
+        int openbracket = 0; 
+        int result = 0;
 
-        for(int i = 0; i<s.size(); i++){
-            char ch = s[i];
-            if(ch == '('){
-                currCount++;
-                maxCount = max(currCount, maxCount);
+        for(char &ch : s) {
+            if(ch == '(') {
+                openbracket++;
             }
-            else if(ch == ')') currCount--;
+            else if(ch == ')') openbracket--;
+
+            result = max(result, openbracket);
         }
-        return maxCount;
+        return result;
     }
 };
