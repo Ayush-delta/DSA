@@ -2,24 +2,24 @@ class Solution {
 public:
     bool isValid(string s) {
         stack<char> st;
-        unordered_map<char, char> match = {
-            {')', '('},
-            {'}', '{'},
-            {']', '['}
-        };
 
-        for (char c : s) {
-            if (c == '(' || c == '{' || c == '[') {
-                st.push(c);
-            } 
+        for(char &ch : s) {
+            if(ch == '(' || ch == '{' || ch == '[') {
+                st.push(ch);
+            }
             else {
-                if (st.empty() || st.top() != match[c]) {
+                if(st.empty()) return false;
+
+                if((ch == ')' && st.top() == '(') || 
+                        (ch == '}' && st.top() == '{') ||
+                        (ch == ']' && st.top() == '[')) {
+                            st.pop();
+                        }    
+                else {
                     return false;
-                }
-                st.pop();
+                }       
             }
         }
-
         return st.empty();
     }
 };
